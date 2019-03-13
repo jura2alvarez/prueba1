@@ -5,12 +5,20 @@ var MongoClient = require("mongodb").MongoClient;
 var path = require("path");
 var cors = require("cors");
 var request = require('request');
-var juradomdbURL= "mongodb://jurado:<dbpassword>@ds137550.mlab.com:37550/juradodex"
+var app = express();
 
-var BASE_API_PATH = "/api/jurado";
+var port = (process.env.PORT || 1607);
+app.use(bodyParser.json());
+app.use("/", express.static(path.join(__dirname + "/public")));
+app.use(cors());
+
+
+var juradomdbURL= "mongodb://jurado:jurado910@ds137550.mlab.com:37550/juradodex"
+var juradoDex = require("./juradoDex");
+
 
 console.log("Intentando conectar a dex");
-MongoClient.connect(juradomdbURL, { native_parser: true }, (err, mlabs) => {
+MongoClient.connect(juradomdbURL, { useNewUrlParser: true }, (err, mlabs) => {
     if (err) {
         console.error("Error accesing DB" + err);
         process.exit(1)
@@ -19,10 +27,10 @@ MongoClient.connect(juradomdbURL, { native_parser: true }, (err, mlabs) => {
         console.log("Connected to DB");
 
         var database = mlabs.db("juradodex");
-        var db = database.collection("dex");
+        var db = database.collection("Dex");
     }
 
-    divorcesAPI.register(app, db);
+    juradoDex.register(app, db);
 
     app.listen(port, () => {
         console.log("Server ready on port " + port + "!");
