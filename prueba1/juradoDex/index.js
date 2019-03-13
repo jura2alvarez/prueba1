@@ -21,7 +21,7 @@ juradoDex.register = function(app,db) {
                 if (err) throw err;
                 var dbo = db.db("juradodex");
                 if (err) throw err;
-                dbo.collection("dex").find({}).skip(offset).limit(limit).toArray(function(err, result) {
+                dbo.collection("Dex").find({}).skip(offset).limit(limit).toArray(function(err, result) {
                     if (!err && !result.length) {
                         console.log("Not found 1");
                         res.sendStatus(200);
@@ -41,7 +41,7 @@ juradoDex.register = function(app,db) {
                 if (err) throw err;
                 var dbo = db.db("juradodex");
                 if (err) throw err;
-                dbo.collection("dex").find({}).toArray(function(err, result) {
+                dbo.collection("Dex").find({}).toArray(function(err, result) {
                     if (!err && !result.length) {
                         console.log("Not found 2");
                        res.sendStatus(200);
