@@ -13,7 +13,7 @@ var initialDivorces  = [
 
 
 
-//Petición get con paginación
+//Petición get con paginacion
 app.get(BASE_API_PATH+"/dex", (req, res) => {
     var limit = Number(req.query.limit);
     var offset = Number(req.query.offset);
