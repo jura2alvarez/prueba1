@@ -6,13 +6,13 @@ var MongoClient = require('mongodb').MongoClient;
 var urljurado= "mongodb://jurado:jurado910@ds137550.mlab.com:37550/juradodex"
 
 juradoDex.register = function(app,db) {
-    var initialDivorces  = [
+    var initialDex  = [
         { "Nombre": "Ingeniería Informática - Tecnologías Informáticas", "Texto": "2012-Actualmente"}
         
     ]
 
 
-//Petición get con paginacion
+//------Petición GET (paginación)
     app.get(BASE_API_PATH+"/dex", (req, res) => {
         var limit = Number(req.query.limit);
         var offset = Number(req.query.offset);
@@ -60,6 +60,41 @@ juradoDex.register = function(app,db) {
     
         
     });
+
+
+    //------Petición POST (válido)
+
+    app.post(BASE_API_PATH + "/dex", (req, res) => {
+        console.log(Date() + " - POST / dex");
+        var dex = req.body;
+        if (dex.Nombre == null || dex.Texto == null) {
+            console.error("Campos no validos");
+            res.sendStatus(400);
+            return;
+        }
+    
+        db.find({ "Nombre": dex.Nombre, "Texto": dex.Texto}).toArray((err, existe) => {
+            if (err) {
+                console.error("Error accediendo a la BD mongo");
+                process.exit(1);
+            }
+    
+            if (existe) {
+                console.log("Itentando introducir"+dex);
+                db.insertOne(dex);
+                console.log(dex);
+                console.log("Elemento insertado");
+                res.sendStatus(201);
+            }
+            else {
+                console.log("El elemento ya existe");
+                res.sendStatus(409);
+            }
+    
+        });
+    });
+
+    
 }
 
 
