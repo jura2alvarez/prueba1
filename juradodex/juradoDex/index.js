@@ -260,6 +260,79 @@ juradoDex.register = function (app, db) {
     });
 
 
+    ////////////////////////////////
+    //      PUT NO PERMITIDO      //  
+    ////////////////////////////////
+    app.put(BASE_API_PATH + "/dex", (req, res) => {
+        console.log(Date() + " - PUT /dex");
+        res.sendStatus(405);
+    });
+    app.put(BASE_API_PATH + "/dex/:tipo", (req, res) => {
+        var tipo = req.params.tipo;
+        var dex = req.body;
+        console.log(Date() + " - PUT /dex/" + dex);
+
+        res.sendStatus(405);
+    });
+    ////////////////////////////////
+
+
+    ////////////////////////////////
+    //     POST NO PERMITIDO      //  
+    ////////////////////////////////
+    app.post(BASE_API_PATH + "/dex/:tipo", (req, res) => {
+        var tipo = req.params.tipo;
+        console.log(Date() + " - POST /dex/" + tipo);
+        res.sendStatus(405);
+    });
+
+    app.post(BASE_API_PATH + "/dex/:tipo/:nombre", (req, res) => {
+        var tipo = req.params.tipo;
+        var nombre = req.params.nombre;
+        console.log(Date() + " - POST /dex/" + tipo + "/" + nombre);
+        res.sendStatus(405);
+    });
+
+    ////////////////////////////////
+    //       PUT PERMITIDO        //  
+    ////////////////////////////////
+
+    app.put(BASE_API_PATH + "/dex/:tipo/:nombre/", (req, res) => {
+        var tipo = req.params.tipo;
+        var nombre = req.params.nombre;
+        var dex = req.body;
+        var id = dex._id;
+
+        console.log(Date() + " - PUT /dex/" + tipo + "/" + nombre);
+
+        if (tipo != dex.tipo || nombre != dex.nombre) {
+            res.sendStatus(400);
+            console.warn(Date() + "Invalid fields");
+            return;
+        }
+        db.find({
+            "tipo": dex.tipo,
+            "nombre": dex.nombre
+        }).toArray((err, results) => {
+            if (err) {
+                console.error("Error accesing DB");
+                res.sendStatus(500);
+                return;
+            } else {
+                delete dex._id;
+                db.update({
+                    "tipo": dex.tipo,
+                    "nombre": dex.nombre
+                }, dex, function (err, numUpdate) {
+                    if (err) throw err;
+                    console.log("Updated: " + numUpdate);
+                });
+                res.sendStatus(200);
+            }
+
+        });
+    });
+
 
 
 } //--Fin de codigo
