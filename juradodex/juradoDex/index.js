@@ -22,7 +22,7 @@ juradoDex.register = function (app, db) {
         },
         {
             "tipo": "Idioma",
-            "nombre": "Inglés",
+            "nombre": "Ingles",
             "texto": "Nivel medio",
             "Anyo": ""
         }
@@ -121,9 +121,10 @@ juradoDex.register = function (app, db) {
 
 
     app.post(BASE_API_PATH + "/dex", (req, res) => {
-        console.log(Date() + " - POST / dex");
+        console.log(Date() + " - POST /dex");
         var dex = req.body;
-        if (dex.Nombre == null || dex.Texto == null) {
+        console.log("XXXXXXXXXXX" + dex);
+        if (dex.nombre == null || dex.texto == null) {
             console.error("Campos no validos");
             res.sendStatus(400);
             return;
@@ -136,13 +137,12 @@ juradoDex.register = function (app, db) {
     //######Funciones Auxiliares POST
     function añadeAMongo(db, dex, res) {
         db.find({
-            "Nombre": dex.Nombre
+            "nombre": dex.nombre
         }).toArray((err, existe) => {
             if (err) {
                 console.error("Error accediendo a la BD mongo");
                 process.exit(1);
             }
-
             if (existe.length == 0) {
                 console.log("Itentando introducir" + dex);
                 db.insertOne(dex);
@@ -186,7 +186,7 @@ juradoDex.register = function (app, db) {
     //######Funciones Auxiliares GET?tipo
     function buscaTipo(db, query, res, tipo) {
         db.find({
-            "Tipo": tipo
+            "tipo": tipo
         }).toArray((err, results) => {
             if (err) {
                 console.error("Error accesing DB");
@@ -205,6 +205,47 @@ juradoDex.register = function (app, db) {
     }
 
     ////////////////////////////////
+    // PETICION GET (tipo/nombre) //  Busqueda por tipo
+    ////////////////////////////////
+    app.get(BASE_API_PATH + "/dex/:tipo/:nombre", (req, res) => {
+        var tipo = req.params.tipo;
+        var nombre = req.params.nombre;
+        var query = req.query;
+        console.log(Date() + " - GET /dex/" + tipo + "/" + nombre);
+        if (query.nombre == null && query.texto == null && query.anyo == null) {
+            buscaTipoNombre(db, query, res, tipo, nombre)
+        }
+    });
+
+    function buscaTipoNombre(db, query, res, tipo, nombre) {
+        db.find({
+            "tipo": tipo,
+            "nombre": nombre
+        }).toArray((err, dex) => {
+            if (err) {
+                console.log("Error al acceder a la base de datos mongo");
+                res.sendStatus(500);
+                return;
+            }
+            if (dex.length == 0) {
+                console.log("Not found");
+                // res.sendStatus(404);
+                return;
+            }
+
+            res.send(dex.map((c) => {
+                delete c._id;
+                return c;
+            }));
+        });
+    }
+
+
+
+
+
+
+    ////////////////////////////////
     //   PETICION DELETE (?tipo)  //  Delete por tipo
     ////////////////////////////////
     app.delete(BASE_API_PATH + "/dex/:tipo?", (req, res) => {
@@ -217,6 +258,8 @@ juradoDex.register = function (app, db) {
 
         res.sendStatus(200);
     });
+
+
 
 
 } //--Fin de codigo
