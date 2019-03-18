@@ -9,22 +9,22 @@ juradoDex.register = function (app, db) {
 
     //----Variable para iniciar la BD en caso de DELETE total
     var initialDex = [{
-            "Tipo": "Estudios",
-            "Nombre": "Ingeniería Informática - Tecnologías Informáticas",
-            "Texto": "Universidad de Sevilla",
-            "Año": "2012-actualmente"
+            "tipo": "Estudios",
+            "nombre": "Ingeniería Informática - Tecnologías Informáticas",
+            "texto": "Universidad de Sevilla",
+            "anyo": "2012-actualmente"
         },
         {
-            "Tipo": "Estudios",
-            "Nombre": "Ingeniería Informática - Ingeniería del Software",
-            "Texto": "Universidad de Sevilla",
-            "Año": "Durante dos años, sin terminar"
+            "tipo": "Estudios",
+            "nombre": "Ingeniería Informática - Ingeniería del Software",
+            "texto": "Universidad de Sevilla",
+            "Anyo": "Durante dos años, sin terminar"
         },
         {
-            "Tipo": "Idioma",
-            "Nombre": "Inglés",
-            "Texto": "Nivel medio",
-            "Año": ""
+            "tipo": "Idioma",
+            "nombre": "Inglés",
+            "texto": "Nivel medio",
+            "Anyo": ""
         }
 
     ]
@@ -157,16 +157,63 @@ juradoDex.register = function (app, db) {
         //return res;
 
     }
-    //////////////////////////////////////
+    ////////////////////////////////
 
     ////////////////////////////////
     //   PETICION DELETE (TOTAL)  //
     ////////////////////////////////
-
     app.delete(BASE_API_PATH + "/dex", (req, res) => {
         console.log(Date() + " - DELETE /dex");
 
         db.deleteMany({});
+
+        res.sendStatus(200);
+    });
+    ////////////////////////////////
+
+
+    ////////////////////////////////
+    //   PETICION GET (?tipo)     //  Busqueda por tipo
+    ////////////////////////////////
+    app.get(BASE_API_PATH + "/dex/:tipo?", (req, res) => {
+        var tipo = req.params.tipo;
+        var query = req.query;
+        console.log(Date() + " - GET /dex/" + tipo);
+        if (query.nombre == null && query.texto == null && query.anyo == null) {
+            buscaTipo(db, query, res, tipo)
+        }
+    });
+    //######Funciones Auxiliares GET?tipo
+    function buscaTipo(db, query, res, tipo) {
+        db.find({
+            "Tipo": tipo
+        }).toArray((err, results) => {
+            if (err) {
+                console.error("Error accesing DB");
+                res.sendStatus(500);
+                return;
+            }
+
+            res.send(results.map((c) => {
+
+                delete c._id;
+                return c;
+
+            }));
+
+        });
+    }
+
+    ////////////////////////////////
+    //   PETICION DELETE (?tipo)  //  Delete por tipo
+    ////////////////////////////////
+    app.delete(BASE_API_PATH + "/dex/:tipo?", (req, res) => {
+        var tipo = req.params.tipo;
+        console.log(Date() + " - DELETE /dex/" + tipo);
+
+        db.deleteMany({
+            "tipo": tipo
+        });
 
         res.sendStatus(200);
     });
