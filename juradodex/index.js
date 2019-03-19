@@ -9,21 +9,22 @@ var app = express();
 
 var port = (process.env.PORT || 1607);
 app.use(bodyParser.json());
-app.use("/", express.static(path.join(__dirname + "/public")));
+app.use("/", express.static(path.join(__dirname, "public")));
 app.use(cors());
 
 
-var juradomdbURL= "mongodb://jurado:jurado910@ds137550.mlab.com:37550/juradodex"
+var juradomdbURL = "mongodb://jurado:jurado910@ds137550.mlab.com:37550/juradodex"
 var juradoDex = require("./juradoDex");
 
 
 console.log("Intentando conectar a dex");
-MongoClient.connect(juradomdbURL, { useNewUrlParser: true }, (err, mlabs) => {
+MongoClient.connect(juradomdbURL, {
+    useNewUrlParser: true
+}, (err, mlabs) => {
     if (err) {
         console.error("Error accesing DB" + err);
         process.exit(1)
-    }
-    else {
+    } else {
         console.log("Connected to DB");
 
         var database = mlabs.db("juradodex");
