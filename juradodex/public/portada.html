@@ -9,6 +9,7 @@
 <!-- Menu de arriba-->
 
 <body>
+
   <nav class="navbar navbar-expand-lg navbar-dark bg-light fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#">Jurado Alvarez</a>
@@ -29,30 +30,33 @@
 
         </ul>
       </div>
-    </div>
+
   </nav>
   </br>
   </br>
   </br>
+</body>
 
-  <div class="card" style="width: 20rem;" id="personal">
-    <img class="card-img-top" src="/images/jurado.png" alt="Card image cap">
-    <div class="card-header">
-      <center>Jose Manuel Jurado Alvarez</center>
-    </div>
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-        content.</p>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-        content.</p>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-        content.</p>
+<body>
+  <div class="container">
+    <div class="card" style="width: 20rem;">
+      <img class="card-img-top" src="/images/jurado.png" alt="Card image cap">
+      <div class="card-header">
+        <center>Jose Manuel Jurado Alvarez</center>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
 
+      </div>
     </div>
+
   </div>
-
-
 
   <div class="container">
     <header class="jumbotron my-4">
@@ -61,13 +65,16 @@
       </br>
 
       <body ng-app="App" ng-controller="portadacontroller">
-        <element ng-repeat="n in dexTotal |filter: 'Estudios' "> {{n.nombre}},
-          {{n.texto}} <br></element>
+        <element ng-repeat="n in dexTotal |filter: 'Estudios' ">
+          ■ <h5> {{n.nombre}}</h5> {{n.texto}}
+          </br>
+          </br>
+        </element>
       </body>
-
     </header>
 
   </div>
+
   <div class="container">
     <header class="jumbotron my-4">
       <h1 class="display-6">Idiomas</h1>
@@ -75,7 +82,7 @@
       </br>
 
       <body ng-app="App" ng-controller="portadacontroller">
-        <element ng-repeat="x in dexTotal | filter:'Idioma'"> {{x.nombre}},
+        <element ng-repeat="x in dexTotal | filter:'Idioma'"> ■ {{x.nombre}},
           {{x.texto}} <br> </element>
       </body>
     </header>
