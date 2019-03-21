@@ -1,8 +1,18 @@
 .bg-light {
-    background-color: #157df5 !important;
+    background-color: #8fbdf1 !important;
     height: 8%
 }
 
-.navbar-dark {
-    background-color: blueviolet;
+.card {
+    border-color: #8fbdf1
+}
+
+.card-header {
+    background-color: #8fbdf1;
+    text-decoration-color: blue
+}
+
+.jumbotron {
+    align-items: right;
+    background-color: #8fbdf1;
 }

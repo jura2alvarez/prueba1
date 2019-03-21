@@ -18,7 +18,7 @@ juradoDex.register = function (app, db) {
             "tipo": "Estudios",
             "nombre": "Ingeniería Informática - Ingeniería del Software",
             "texto": "Universidad de Sevilla",
-            "Anyo": "Durante dos años, sin terminar"
+            "anyo": "Durante dos años, sin terminar"
         },
         {
             "tipo": "Idioma",
@@ -249,14 +249,17 @@ juradoDex.register = function (app, db) {
 
 
     ////////////////////////////////
-    //   PETICION DELETE (?tipo)  //  Delete por tipo
+    //   PETICION DELETE (?tipo/nombre)  //  Delete expecifico
     ////////////////////////////////
-    app.delete(BASE_API_PATH + "/dex/:tipo?", (req, res) => {
+    app.delete(BASE_API_PATH + "/dex/:tipo/:nombre", (req, res) => {
         var tipo = req.params.tipo;
-        console.log(Date() + " - DELETE /dex/" + tipo);
+        var nombre = req.params.nombre
+        console.log(Date() + " - DELETE /dex/" + tipo + "/" +
+            nombre);
 
         db.deleteMany({
-            "tipo": tipo
+            "tipo": tipo,
+            "nombre": nombre
         });
 
         res.sendStatus(200);
