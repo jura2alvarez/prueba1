@@ -10,8 +10,9 @@ module.exports = {
     ]
   ],
   plugins: [
-    '@babel/plugin-proposal-object-rest-spread'
-  ],
+    process.env.PLUGINS && 'transform-es2015-modules-strip',
+    '@babel/proposal-object-rest-spread'
+  ].filter(Boolean),
   env: {
     test: {
       plugins: [ 'istanbul' ]

@@ -5,19 +5,17 @@
  * Remember to use the same vendor files as the CDN ones,
  * otherwise the hashes won't match!
  *
- * Copyright 2017-2019 The Bootstrap Authors
- * Copyright 2017-2019 Twitter, Inc.
+ * Copyright 2017-2018 The Bootstrap Authors
+ * Copyright 2017-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
 'use strict'
 
-const crypto = require('crypto')
 const fs = require('fs')
 const path = require('path')
+const sriToolbox = require('sri-toolbox')
 const sh = require('shelljs')
-
-const pkg = require('../package.json')
 
 sh.config.fatal = true
 
@@ -36,15 +34,11 @@ const files = [
     configPropertyName: 'js_hash'
   },
   {
-    file: 'dist/js/bootstrap.bundle.min.js',
-    configPropertyName: 'js_bundle_hash'
-  },
-  {
-    file: `site/docs/${pkg.version_short}/assets/js/vendor/jquery-slim.min.js`,
+    file: 'assets/js/vendor/jquery-slim.min.js',
     configPropertyName: 'jquery_hash'
   },
   {
-    file: 'node_modules/popper.js/dist/umd/popper.min.js',
+    file: 'assets/js/vendor/popper.min.js',
     configPropertyName: 'popper_hash'
   }
 ]
@@ -55,9 +49,9 @@ files.forEach((file) => {
       throw err
     }
 
-    const algo = 'sha384'
-    const hash = crypto.createHash(algo).update(data, 'utf8').digest('base64')
-    const integrity = `${algo}-${hash}`
+    const integrity = sriToolbox.generate({
+      algorithms: ['sha384']
+    }, data)
 
     console.log(`${file.configPropertyName}: ${integrity}`)
 

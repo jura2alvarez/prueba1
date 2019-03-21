@@ -16,7 +16,6 @@ $(function () {
     afterEach: function () {
       $.fn.alert = $.fn.bootstrapAlert
       delete $.fn.bootstrapAlert
-      $('#qunit-fixture').html('')
     }
   })
 

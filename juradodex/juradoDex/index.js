@@ -72,7 +72,10 @@ juradoDex.register = function (app, db) {
     //  FUNCIONES AUXILIARES GET  
 
     function paginacion(urljurado, db, res, offset, limit) {
-        MongoClient.connect(urljurado, function (err, db) {
+        MongoClient.connect(urljurado, {
+            useNewUrlParser: true
+        }, function (err, db) {
+
             if (err) throw err;
             var dbo = db.db("juradodex");
             if (err) throw err;
