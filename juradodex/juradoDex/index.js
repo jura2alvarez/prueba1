@@ -7,28 +7,6 @@ var urljurado = "mongodb://jurado:jurado910@ds137550.mlab.com:37550/juradodex"
 
 juradoDex.register = function (app, db) {
 
-    //----Variable para iniciar la BD en caso de DELETE total
-    var initialDex = [{
-            "tipo": "Estudios",
-            "nombre": "Ingeniería Informática - Tecnologías Informáticas",
-            "texto": "Universidad de Sevilla",
-            "anyo": "2012-actualmente"
-        },
-        {
-            "tipo": "Estudios",
-            "nombre": "Ingeniería Informática - Ingeniería del Software",
-            "texto": "Universidad de Sevilla",
-            "anyo": "Durante dos años, sin terminar"
-        },
-        {
-            "tipo": "Idioma",
-            "nombre": "Ingles",
-            "texto": "Nivel medio",
-            "Anyo": ""
-        }
-
-    ]
-
 
     //------Inicializador 
 
@@ -342,3 +320,54 @@ juradoDex.register = function (app, db) {
 
 
 } //--Fin de codigo
+
+//----Variable para iniciar la BD en caso de DELETE total
+var initialDex = [{
+        "tipo": "Estudios",
+        "nombre": "Titulo de Bachillerato Técnológico",
+        "texto": "IES Juan Sebastián Elcano, Sanlúcar de Barrameda",
+        "anyo": ""
+    },
+    {
+        "tipo": "Estudios",
+        "nombre": "Ingeniería Informática - Ingeniería del Software",
+        "texto": "Universidad de Sevilla",
+        "anyo": "Durante dos años. Sin acabar"
+    },
+    {
+        "tipo": "Estudios",
+        "nombre": "Ingeniería Informática - Tecnologías Informáticas",
+        "texto": "Universidad de Sevilla",
+        "anyo": "En curso"
+    },
+
+    {
+        "tipo": "Idioma",
+        "nombre": "Ingles",
+        "texto": "Nivel medio",
+        "Anyo": ""
+    },
+    {
+        "tipo": "Idioma",
+        "nombre": "Frances",
+        "texto": "Nivel básico",
+        "Anyo": ""
+    },
+    {
+        "tipo": "Programacion",
+        "nombre": "JAVA",
+        "texto": "",
+        "Anyo": ""
+    },
+    {
+        "tipo": "Programacion",
+        "nombre": "Python",
+        "texto": "",
+        "Anyo": ""
+    }, {
+        "tipo": "Programacion",
+        "nombre": "C",
+        "texto": "",
+        "Anyo": ""
+    }
+]
