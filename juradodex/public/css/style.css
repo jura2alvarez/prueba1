@@ -5,13 +5,12 @@
 
 .navbar {
     border-bottom: 2px solid rgb(255, 255, 255);
-    min-width: 5%;
-    height: 10%;
+    min-width: 0%;
+    height: 9%;
     text-align: left;
     text-size-adjust: 54;
 }
 
-.navbar-brand {}
 
 .card {
 
@@ -21,7 +20,6 @@
     margin: 2%;
     margin-left: 2%;
     margin-bottom: 5%;
-    margin-top: 5%;
     padding-top: 0px;
     align-self: flex-start;
     width: 20rem;
@@ -48,7 +46,13 @@
 
 #block0 {
     display: inline-flex;
+    margin: 5%;
     margin-left: 2%;
+    margin-bottom: 5%;
+    margin-top: 0%;
+    margin-block-end: 1%;
+    margin-block-start: 2%;
+    margin-right: 10%
 }
 
 #block2 {
