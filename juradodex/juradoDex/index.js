@@ -366,9 +366,16 @@ var initialDex = [{
         "nombre": "Python",
         "texto": "",
         "Anyo": ""
-    }, {
+    },
+    {
         "tipo": "Programacion",
         "nombre": "C",
+        "texto": "",
+        "Anyo": ""
+    },
+    {
+        "tipo": "Otros",
+        "nombre": "Carne de conducir B",
         "texto": "",
         "Anyo": ""
     }

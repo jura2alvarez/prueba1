@@ -49,11 +49,22 @@
 #block0 {
     display: inline-flex;
     margin-left: 2%;
-    border-color: blueviolet;
 }
 
 #block2 {
     margin-left: 2%;
     margin-top: 4%;
 
+}
+
+#postit {
+    border-color: yellow;
+    background-color: #eff14c !important;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    height: 20%;
+}
+
+#postitheader {
+    background-color: #f8fc2f !important;
+    color: black;
 }
