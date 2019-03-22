@@ -13,5 +13,8 @@ angular.module("App", ["ngRoute"]).config(function ($routeProvider) {
         })
         .when("/info", {
             templateUrl: "info.html"
+        })
+        .when("/prueba", {
+            templateUrl: "portadaprueba.html"
         });
 });

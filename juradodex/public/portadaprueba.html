@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<!-- Navegador-->
+<link href="css/style.css" rel="stylesheet">
+
+<head>
+    <meta charset="uft-8" />
+    <title>Jurado Alvarez</title>
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fas fa-home"></i>  Jurado Alvarez </a>
+            <a class="navbar-brand" href="#!/dex"><i class="fas fa-grip-horizontal"></i> Controller </a>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#!/info"><i class="fas fa-info"></i>nfo
+                            <span class="sr-only">(current)</span>
+                        </a>
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+    </br>
+    </br>
+    </br>
+</body>
+<!-- Navegador-->
+
+<body>
+    <div id="block0">
+        <div id="block1">
+            <div class="card">
+                <img class="card-img-top" src="/images/jurado.png" alt="Card image cap">
+                <div class="card-header">
+                    <center>Jose Manuel Jurado Alvarez</center>
+                </div>
+                <div class="card-body" align="center">
+                    <h5 class="card-title">Ingeniero Informático en Tecnologías Informáticas</h5>
+                    <hr class="my-2">
+                    <p class="card-text"><i class="far fa-envelope"></i>  <a
+                            href="mailto:jurado910@hotmail.com">jurado910@hotmail.com</a></p>
+                    <p class="card-text"><i class="fas fa-phone"></i>  659 06 09 70</p>
+                    <hr class="my-3">
+                    <p><a href="https://github.com/jura2alvarez" class="btn btn-secondary"><i class="fab fa-github"
+                                aria-hidden="true"></i>
+                            Search me in GitHub</a></p>
+                    <p><a href="https://www.linkedin.com/in/jose-manuel-jurado-alvarez-761ab517a/"
+                            class="btn btn-primary">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            Search me in Linkdin</a></p>
+                    <hr class="my-3">
+                    <h1><i class="fab fa-java"></i>  <i class="fab fa-python"></i>  <i class="fab fa-node-js"></i>  <i
+                            class="fab fa-angular"></i></h1>
+                    <h1><i class="fab fa-js-square"></i>  <i class="fab fa-bootstrap"></i>  <i class="fab fa-npm"></i>
+                         <i class="fab fa-html5"></i></h1>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div id="block2">
+            <header class="jumbotron my-4">
+                <h1 class="display-6">Formación</h1>
+                <hr class="my-1">
+                </br>
+
+                <body ng-app="App" ng-controller="portadacontroller">
+                    <element ng-repeat="n in dexTotal |filter: 'Estudios' ">
+                        <h5>• {{n.nombre}}</h5> {{n.texto}}
+                        </br>
+                        </br>
+                    </element>
+                </body>
+            </header>
+
+
+
+
+            <header class="jumbotron my-4">
+                <h1 class="display-6">Idiomas</h1>
+                <hr class="my-1">
+                </br>
+
+                <body ng-app="App" ng-controller="portadacontroller">
+                    <element ng-repeat="x in dexTotal | filter:'Idioma'">
+                        <h5>• {{x.nombre}}</h5>
+                        {{ x.texto}}
+                        </br>
+                        </br>
+                    </element>
+                </body>
+            </header>
+
+
+
+            <header class="jumbotron my-4">
+                <h1 class="display-6">Programación </i></h1>
+                <hr class="my-1">
+                </br>
+
+                <body ng-app="App" ng-controller="portadacontroller">
+                    <element ng-repeat="x in dexTotal | filter:'Programacion'">
+                        <h6>• {{x.nombre}}</h6>
+                        {{ x.texto}}
+                        </br>
+                    </element>
+                </body>
+            </header>
+        </div>
+    </div>
+    </div>
+
+    <!--Prueba-->
+
+
+    <!--Fin de pruebas-->
+
+
+    <footer class="py-3 bg-light">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Jurado Alvarez</p>
+        </div>
+    </footer>
+
+</html>
