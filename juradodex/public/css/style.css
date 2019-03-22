@@ -10,12 +10,14 @@
 .navbar-brand {}
 
 .card {
+
     border-color: #157df5;
     border-width: 2px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     left: -8%;
     margin: 0;
-    display: inline-block
+    display: inline-block;
+    padding-top: 15px;
 }
 
 .card-header {
