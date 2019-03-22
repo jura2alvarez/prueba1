@@ -105,19 +105,21 @@ juradoDex.register = function (app, db) {
         console.log(Date() + " - POST /dex");
         var dex = req.body;
         console.log("XXXXXXXXXXX" + dex);
-        if (dex.nombre == null || dex.texto == null) {
+        if (dex.nombre == null || dex.tipo == null) {
             console.error("Campos no validos");
             res.sendStatus(400);
             return;
+        } else {
+            añadido = añadeAMongo(db, dex, res)
+            //res.sendStatus(añadido ? 201 : 409)
         }
-        añadido = añadeAMongo(db, dex, res)
-        //res.sendStatus(añadido ? 201 : 409)
     });
 
     //////////////////////////////////////
     //######Funciones Auxiliares POST
     function añadeAMongo(db, dex, res) {
         db.find({
+            "tipo": dex.tipo,
             "nombre": dex.nombre
         }).toArray((err, existe) => {
             if (err) {

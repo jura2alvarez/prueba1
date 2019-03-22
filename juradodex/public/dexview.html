@@ -41,7 +41,13 @@
     </thead>
     <tbody>
         <tr>
-            <td><input class="form-control" ng-model="newDex.tipo" /></td>
+            <td><select class="form-control" ng-model="newDex.tipo">
+                    <option value="Estudios">Estudios</option>
+                    <option value="Idioma">Idioma</option>
+                    <option value="Programacion">Programación</option>
+                    <option value="Otros">Otros</option>
+                </select>
+            </td>
             <td><input class="form-control" type="" ng-model="newDex.nombre" /></td>
             <td><input class="form-control" type="" ng-model="newDex.texto" /></td>
             <td><input class="form-control" type="" ng-model="newDex.anyo" /></td>
