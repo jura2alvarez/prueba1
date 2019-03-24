@@ -11,7 +11,10 @@ ul {
     overflow: hidden;
     background-color: #157df5;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+
 }
+
+
 
 li {
     float: left;
@@ -54,8 +57,10 @@ a:active {
 
 /*Fin barra navegador*/
 .container {
-    margin-top: 1%
+    margin-block-start: 5%
 }
+
+
 
 .card {
 
