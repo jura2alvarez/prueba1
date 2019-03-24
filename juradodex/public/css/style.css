@@ -94,17 +94,17 @@ a:active {
 
 #block0 {
     display: inline-flex;
-    margin: 5%;
+
     margin-left: 2%;
     margin-bottom: 5%;
     margin-top: 0%;
     margin-block-end: 1%;
     margin-block-start: 2%;
-    margin-right: 0%;
+    width: 90%
 }
 
 #block2 {
-    width: 100%
+    width: 90%
 }
 
 #postit {
