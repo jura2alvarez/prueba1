@@ -16,101 +16,103 @@
 <!-- Navegador-->
 
 <body>
-  <div id="block0">
-    <div id="block1">
-      <div class="card">
-        <img class="card-img-top" src="/images/jurado.png" alt="Card image cap">
-        <div class="card-header">
-          <center>Jose Manuel Jurado Alvarez</center>
+  <div class="row justify-content-md-center">
+    <div id="block0">
+      <div id="block1">
+        <div class="card">
+          <img class="card-img-top" src="/images/jurado.png" alt="Card image cap">
+          <div class="card-header">
+            <center>Jose Manuel Jurado Alvarez</center>
+          </div>
+          <div class="card-body" align="center">
+            <h5 class="card-title">Ingeniero Informático en Tecnologías Informáticas</h5>
+            <hr class="my-2">
+            <p class="card-text"><i class="far fa-envelope"></i>  <a
+                href="mailto:jurado910@hotmail.com">jurado910@hotmail.com</a></p>
+            <p class="card-text"><i class="fas fa-phone"></i>  659 06 09 70</p>
+            <hr class="my-3">
+            <p><a href="https://github.com/jura2alvarez" class="btn btn-secondary"><i class="fab fa-github"
+                  aria-hidden="true"></i>
+                Search me in GitHub</a></p>
+            <p><a href="https://www.linkedin.com/in/jose-manuel-jurado-alvarez-761ab517a/" class="btn btn-primary">
+                <i class="fab fa-linkedin" aria-hidden="true"></i>
+                Search me in Linkdin</a></p>
+            <hr class="my-3">
+            <h1><i class="fab fa-java"></i>  <i class="fab fa-python"></i>  <i class="fab fa-node-js"></i>  <i
+                class="fab fa-angular"></i></h1>
+            <h1><i class="fab fa-js-square"></i>  <i class="fab fa-bootstrap"></i>  <i class="fab fa-npm"></i>
+               <i class="fab fa-html5"></i></h1>
+
+
+          </div>
         </div>
-        <div class="card-body" align="center">
-          <h5 class="card-title">Ingeniero Informático en Tecnologías Informáticas</h5>
-          <hr class="my-2">
-          <p class="card-text"><i class="far fa-envelope"></i>  <a
-              href="mailto:jurado910@hotmail.com">jurado910@hotmail.com</a></p>
-          <p class="card-text"><i class="fas fa-phone"></i>  659 06 09 70</p>
-          <hr class="my-3">
-          <p><a href="https://github.com/jura2alvarez" class="btn btn-secondary"><i class="fab fa-github"
-                aria-hidden="true"></i>
-              Search me in GitHub</a></p>
-          <p><a href="https://www.linkedin.com/in/jose-manuel-jurado-alvarez-761ab517a/" class="btn btn-primary">
-              <i class="fab fa-linkedin" aria-hidden="true"></i>
-              Search me in Linkdin</a></p>
-          <hr class="my-3">
-          <h1><i class="fab fa-java"></i>  <i class="fab fa-python"></i>  <i class="fab fa-node-js"></i>  <i
-              class="fab fa-angular"></i></h1>
-          <h1><i class="fab fa-js-square"></i>  <i class="fab fa-bootstrap"></i>  <i class="fab fa-npm"></i>
-             <i class="fab fa-html5"></i></h1>
+        <div id="postit" class="card mb-3" style="max-width: 18rem;">
+          <div id="postitheader" class="card-header">
+            <h4><i class="fas fa-thumbtack"></i> Otras Competencias
+            </h4>
+          </div>
+          <div class="card-body ">
 
-
+            <body ng-app="App" ng-controller="portadacontroller">
+              <element ng-repeat="n in dexTotal |filter: 'Otros' ">
+                <p class="card-text">• {{n.nombre}}</p>
+              </element>
+          </div>
         </div>
       </div>
-      <div id="postit" class="card mb-3" style="max-width: 18rem;">
-        <div id="postitheader" class="card-header">
-          <h4><i class="fas fa-thumbtack"></i> Otras Competencias
-          </h4>
-        </div>
-        <div class="card-body ">
+      <div id="block2">
+        <header class="jumbotron my-4">
+          <h1 class="display-6">Formación</h1>
+          <hr class="my-1 border-white">
+          </br>
 
           <body ng-app="App" ng-controller="portadacontroller">
-            <element ng-repeat="n in dexTotal |filter: 'Otros' ">
-              <p class="card-text">• {{n.nombre}}</p>
+            <element ng-repeat="n in dexTotal |filter: 'Estudios' ">
+              <h5>• {{n.nombre}}</h5> {{n.texto}}
+              </br>
+              </br>
             </element>
-        </div>
+          </body>
+        </header>
+
+
+
+
+        <header class="jumbotron my-4">
+          <h1 class="display-6">Idiomas</h1>
+          <hr class="my-1 border-white">
+          </br>
+
+          <body ng-app="App" ng-controller="portadacontroller">
+            <element ng-repeat="x in dexTotal | filter:'Idioma'">
+              <h5>• {{x.nombre}}</h5>
+              {{ x.texto}}
+              </br>
+              </br>
+            </element>
+          </body>
+        </header>
+
+
+
+        <header class="jumbotron my-4">
+          <h1 class="display-6">Programación </i></h1>
+          <hr class="my-1 border-white">
+          </br>
+
+          <body ng-app="App" ng-controller="portadacontroller">
+            <element ng-repeat="x in dexTotal | filter:'Programacion'">
+              <h6>• {{x.nombre}}</h6>
+              {{ x.texto}}
+              </br>
+            </element>
+          </body>
+        </header>
       </div>
     </div>
-
-    <div id="block2">
-      <header class="jumbotron my-4">
-        <h1 class="display-6">Formación</h1>
-        <hr class="my-1 border-white">
-        </br>
-
-        <body ng-app="App" ng-controller="portadacontroller">
-          <element ng-repeat="n in dexTotal |filter: 'Estudios' ">
-            <h5>• {{n.nombre}}</h5> {{n.texto}}
-            </br>
-            </br>
-          </element>
-        </body>
-      </header>
-
-
-
-
-      <header class="jumbotron my-4">
-        <h1 class="display-6">Idiomas</h1>
-        <hr class="my-1 border-white">
-        </br>
-
-        <body ng-app="App" ng-controller="portadacontroller">
-          <element ng-repeat="x in dexTotal | filter:'Idioma'">
-            <h5>• {{x.nombre}}</h5>
-            {{ x.texto}}
-            </br>
-            </br>
-          </element>
-        </body>
-      </header>
-
-
-
-      <header class="jumbotron my-4">
-        <h1 class="display-6">Programación </i></h1>
-        <hr class="my-1 border-white">
-        </br>
-
-        <body ng-app="App" ng-controller="portadacontroller">
-          <element ng-repeat="x in dexTotal | filter:'Programacion'">
-            <h6>• {{x.nombre}}</h6>
-            {{ x.texto}}
-            </br>
-          </element>
-        </body>
-      </header>
-    </div>
   </div>
   </div>
+
 
   <!--Prueba-->
 
