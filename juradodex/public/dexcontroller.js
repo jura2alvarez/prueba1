@@ -6,7 +6,7 @@ angular.module("App").controller("dexcontroller", ["$scope", "$http", function (
     var api = "/api/jurado/dex";
 
     function getDex() {
-        $http.get(api + "?limit=10&offset=0").then(function successCallback(response) {
+        $http.get(api + "?limit=10&offset=").then(function successCallback(response) {
             $scope.status = "Status: " + response.status;
             $scope.dexTotal = response.data;
             $scope.error = "";
@@ -105,6 +105,36 @@ angular.module("App").controller("dexcontroller", ["$scope", "$http", function (
         }, function errorCallback(response) {
             console.log(response.status);
             $scope.status = "Status: " + response.status;
+            $scope.error = "Ups, something was wrong. Try it later";
+        });
+
+    }
+
+    //Paginacion
+
+    $scope.getPageNext = function () {
+        $scope.offset = $scope.offset + 10;
+        $http.get(api + "?limit=10" + "&offset=" + $scope.offset).then(function successCallback(response) {
+            $scope.status = "STATUS: " + response.status + "Done!";
+            $scope.dexTotal = response.data;
+            $scope.error = ""
+        }, function errorCallback(response) {
+            console.log(response.status);
+            $scope.status = response.status;
+            $scope.error = "Ups, something was wrong. Try it later";
+        });
+
+    }
+
+    $scope.getPageBack = function () {
+        $scope.offset = $scope.offset - 10;
+        $http.get(api + "?limit=10" + "&offset=" + $scope.offset).then(function successCallback(response) {
+            $scope.status = "STATUS: " + response.status + "Done!";
+            $scope.dexTotal = response.data;
+            $scope.error = ""
+        }, function errorCallback(response) {
+            console.log(response.status);
+            $scope.status = response.status;
             $scope.error = "Ups, something was wrong. Try it later";
         });
 
