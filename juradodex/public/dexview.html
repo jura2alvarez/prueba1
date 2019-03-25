@@ -15,59 +15,62 @@
 </ul>
 <!-- Navegador-->
 <h1>Dex controller beta</h1>
-<table class="table table-responsive-lg table-bordered table-striped">
-    <thead>
-        <tr>
-            <th scope="col">Tipo</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Texto</th>
-            <th scope="col">Año</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><select class="form-control" ng-model="newDex.tipo">
-                    <option value="Estudios">Estudios</option>
-                    <option value="Idioma">Idioma</option>
-                    <option value="Programacion">Programación</option>
-                    <option value="Otros">Otros</option>
-                </select>
-            </td>
-            <td><input class="form-control" type="" ng-model="newDex.nombre" /></td>
-            <td><input class="form-control" type="" ng-model="newDex.texto" /></td>
-            <td><input class="form-control" type="" ng-model="newDex.anyo" /></td>
-            <td><button class="button btn-success" ng-click="addDex()">
-                    Add
-                </button></td>
-        </tr>
-        <tr ng-repeat="dex in dexTotal">
-            <td><a href="/#!/dex/{{dex.tipo}}/{{dex.nombre}}">{{dex.tipo}}</a></td>
-            <td>{{dex.nombre}}</td>
-            <td>{{dex.texto}}</td>
-            <td>{{dex.anyo}}</td>
-            <td><button class="button btn-danger" ng-click="deleteDex(dex.tipo, dex.nombre)">Delete</button></td>
-        </tr>
-        <tr>
-            <td><button class="button btn-info" ng-click="getPageBack()">Back</button></td>
-            <td><button class="button btn-info" ng-click="getPageNext()">Next</button></td>
-            <td><button class="button btn-danger" ng-click="deleteAll()">Delete All</button></td>
-            <td><button class="button btn-primary" ng-click="fillTable()">Fill Table</button></td>
-        </tr>
-        <tr>
-            <td>
-                <select class="form-control" ng-model="tipo" ng-init="tipo='tipo'">
-                    <option value="">Todos</option>
-                    <option value="Estudios">Estudios</option>
-                    <option value="Idioma">Idiomas</option>
-                    <option value="Programacion">Programación</option>
-                    <option value="Otros">Otros</option>
-                </select>
-            </td>
-            <td>
-                <button class="button btn-primary" ng-click="getBusqueda()">Buscar</button>
-            </td>
-        </tr>
-</table>
+<div class="table-responsive-sm">
+    <table class="table table-responsive-sm table-bordered table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Tipo</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Texto</th>
+                <th scope="col">Año</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr scope="row">
+                <td><select class="form-control" ng-model="newDex.tipo">
+                        <option value="Estudios">Estudios</option>
+                        <option value="Idioma">Idioma</option>
+                        <option value="Programacion">Programación</option>
+                        <option value="Otros">Otros</option>
+                    </select>
+                </td>
+                <td><input class="form-control" type="" ng-model="newDex.nombre" /></td>
+                <td><input class="form-control" type="" ng-model="newDex.texto" /></td>
+                <td><input class="form-control" type="" ng-model="newDex.anyo" /></td>
+                <td><button class="button btn-success" ng-click="addDex()">
+                        Add
+                    </button></td>
+            </tr>
+            <tr scope="row" ng-repeat="dex in dexTotal">
+                <td><a href="/#!/dex/{{dex.tipo}}/{{dex.nombre}}">{{dex.tipo}}</a></td>
+                <td>{{dex.nombre}}</td>
+                <td>{{dex.texto}}</td>
+                <td>{{dex.anyo}}</td>
+                <td><button class="button btn-danger" ng-click="deleteDex(dex.tipo, dex.nombre)">Delete</button></td>
+            </tr>
+            <tr scope="row">
+                <td><button class="button btn-info" ng-click="getPageBack()">Back</button></td>
+                <td><button class="button btn-info" ng-click="getPageNext()">Next</button></td>
+                <td><button class="button btn-danger" ng-click="deleteAll()">Delete All</button></td>
+                <td><button class="button btn-primary" ng-click="fillTable()">Fill Table</button></td>
+            </tr>
+            <tr scope="row">
+                <td>
+                    <select class="form-control" ng-model="tipo" ng-init="tipo='tipo'">
+                        <option value="">Todos</option>
+                        <option value="Estudios">Estudios</option>
+                        <option value="Idioma">Idiomas</option>
+                        <option value="Programacion">Programación</option>
+                        <option value="Otros">Otros</option>
+                    </select>
+                </td>
+                <td>
+                    <button class="button btn-primary" ng-click="getBusqueda()">Buscar</button>
+                </td>
+            </tr>
+    </table>
+</div>
+
 <footer class="py-3 bg-light">
     <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; Jurado Alvarez</p>
