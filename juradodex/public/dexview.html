@@ -15,13 +15,13 @@
 </ul>
 <!-- Navegador-->
 <h1>Dex controller beta</h1>
-<table class="table table-bordered table-striped sortable" id=divtab>
+<table class="table table-responsive-lg table-bordered table-striped">
     <thead>
         <tr>
-            <th onclick="sortTable(0)">Tipo</th>
-            <th onclick="sortTable(1)">Nombre</th>
-            <th onclick="sortTable(2)">Texto</th>
-            <th>Año</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Texto</th>
+            <th scope="col">Año</th>
         </tr>
     </thead>
     <tbody>
@@ -56,7 +56,7 @@
         <tr>
             <td>
                 <select class="form-control" ng-model="tipo" ng-init="tipo='tipo'">
-                    <option value="" disabled selected></option>
+                    <option value="">Todos</option>
                     <option value="Estudios">Estudios</option>
                     <option value="Idioma">Idiomas</option>
                     <option value="Programacion">Programación</option>
@@ -68,13 +68,8 @@
             </td>
         </tr>
 </table>
-
-
 <footer class="py-3 bg-light">
     <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; Jurado Alvarez</p>
     </div>
 </footer>
-
-
-</tbody>

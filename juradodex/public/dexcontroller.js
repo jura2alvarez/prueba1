@@ -156,6 +156,7 @@ angular.module("App").controller("dexcontroller", ["$scope", "$http", function (
 
     }
 
+
     getDex();
 
 
