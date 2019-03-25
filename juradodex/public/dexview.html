@@ -15,13 +15,37 @@
 </ul>
 <!-- Navegador-->
 <h1>Dex</h1>
+<div id="busqueda">
+    <td>
+        <select class="form-control" ng-model="tipo" ng-init="tipo='tipo'">
+            <option value="" disabled selected></option>
+            <option value="Estudios">Estudios</option>
+            <option value="Idioma">Idiomas</option>
+            <option value="Programacion">Programación</option>
+            <option value="Otros">Otros</option>
+
+
+    </td>
+    <td></select> <button class="button btn-primary" ng-click="getBusqueda()">Buscar</button></td>
+</div>
 <table class="table table-bordered table-striped sortable" id=divtab>
     <thead>
         <tr>
             <th onclick="sortTable(0)">Tipo</th>
             <th onclick="sortTable(1)">Nombre</th>
             <th onclick="sortTable(2)">Texto</th>
+
             <th>Año</th>
+            <th>
+                <select class="form-control" ng-model="tipo" ng-init="tipo='tipo'">
+                    <option value="" disabled selected></option>
+                    <option value="Estudios">Estudios</option>
+                    <option value="Idioma">Idiomas</option>
+                    <option value="Programacion">Programación</option>
+                    <option value="Otros">Otros</option>
+                </select> <button class="button btn-primary" ng-click="getBusqueda()">Buscar</button>
+
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -54,6 +78,29 @@
             <td><button class="button btn-primary" ng-click="fillTable()">Fill Table</button></td>
         </tr>
 
+</table>
+
+<h2>Search</h2>
+<table class="table table-bordered table-hover">
+    <tr>
+        <thead>
+            <tr>
+                <th>Tipo</th>
+            </tr>
+        </thead>
+
+        <td>
+            <select class="form-control" ng-model="tipo" ng-init="tipo='tipo'">
+                <option value="" disabled selected></option>
+                <option value="Estudios">Estudios</option>
+                <option value="Idioma">Idiomas</option>
+                <option value="Programacion">Programación</option>
+                <option value="Otros">Otros</option>
+            </select>
+
+        </td>
+        <td> <button class="button btn-primary" ng-click="getBusqueda()">Buscar</button></td>
+    </tr>
 </table>
 
 

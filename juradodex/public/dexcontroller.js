@@ -140,6 +140,22 @@ angular.module("App").controller("dexcontroller", ["$scope", "$http", function (
 
     }
 
+    $scope.getBusqueda = function () {
+        console.log(api + "/" + $scope.tipo);
+        $http.get(api + "/" + $scope.tipo).then(function successCallback(response) {
+            $scope.status = "STATUS: " + response.status + "Done!";
+            $scope.dexTotal = response.data;
+            $scope.error = ""
+
+        }, function errorCallback(response) {
+            console.log(response.status);
+            $scope.status = response.status;
+            $scope.error = "Ups, something was wrong. Try it later";
+            $scope.empty = getDex();
+        });
+
+    }
+
     getDex();
 
 
