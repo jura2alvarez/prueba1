@@ -375,7 +375,7 @@ var initialDex = [{
     },
     {
         "tipo": "Otros",
-        "nombre": "Carne de conducir B",
+        "nombre": "Permiso de conducir tipo B",
         "texto": "",
         "Anyo": ""
     }
