@@ -62,7 +62,7 @@ a:active {
 
 
 
-.card {
+#cartajurado {
 
     border-color: #157df5;
     border-width: 2px;
@@ -79,14 +79,23 @@ a:active {
     color: white
 }
 
-.jumbotron {
+#jumboblue {
     background-color: #157df5;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
     border-color: #086fe4;
     border-width: 50px;
     color: white;
-    margin-left: 10%;
+    margin-left: 1%;
+    border-left: 1px;
+}
+
+#jumbogris {
+    background-color: #3d4044;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
+    border-color: #086fe4;
+    border-width: 50px;
+    color: white;
+    margin-left: 1%;
     border-left: 1px;
 }
 
@@ -124,4 +133,30 @@ a:active {
 
 body {
     background-color: #f3f0f0;
+}
+
+@include media-breakpoint-up(xs) {
+    ...
+}
+
+@include media-breakpoint-up(sm) {
+    ...
+}
+
+@include media-breakpoint-up(md) {
+    ...
+}
+
+@include media-breakpoint-up(lg) {
+    ...
+}
+
+@include media-breakpoint-up(xl) {
+    ...
+}
+
+@include media-breakpoint-up(sm) {
+    .some-class {
+        display: block;
+    }
 }

@@ -15,8 +15,60 @@
     <li style="float:right"><a class="active" href="#!/info"> <i class="fas fa-info"></i></a></li>
 </ul>
 <!-- Navegador-->
+<div class="container">
+    <header class="jumbotron my-4" id="jumbogris">
+        <h1 class=" display-6">Información</h1>
+        <hr class="my-1 border-white">
+        <p class="lead">Esta aplicación web está basado en un backend en Node.js, que almacena información en formato
+            Json en una base de datos en MongoDB.
+            A esta base de datos se accede mediante peticiones API Restfull, las cuales son visualizadas en el frontend
+            hecho en AngularJS.
+        </p>
 
+        <p>Toda la información mostrada en Jurado Alvarez es dinámica y está sujeta a lo almacenado en la base de datos.
+            Todo lo que sea añadido o eliminado en el controllador será actualizado en la página principal.</p>
 
+    </header>
+
+    <header class="jumbotron my-4" id="jumbogris">
+        <h1 class=" display-6">API</h1>
+        <hr class="my-4 border-white">
+        <p class="lead">GET al conjunto completo:
+        </p>
+        <p> URL/api/jurado/dex</p>
+
+        <p class="lead">GET a un tipo concreto:
+        </p>
+        <p> URL/api/jurado/dex/tipo</p>
+
+    </header>
+
+    <header class="jumbotron my-4" id="jumbogris">
+        <h1 class=" display-6">Json</h1>
+        <hr class="my-4 border-white">
+        <p class="lead">Formato de una petición GET
+        </p>
+        <p> {
+            tipo: "Estudios",
+            nombre: "Ingeniería Informática - Ingeniería del Software",
+            texto: "Universidad de Sevilla",
+            anyo: "Durante dos años. Sin acabar"
+            },
+            {
+            tipo: "Estudios",
+            nombre: "Ingeniería Informática - Tecnologías Informáticas",
+            texto: "Universidad de Sevilla",
+            anyo: "En curso"
+            },
+            {
+            tipo: "Idioma",
+            nombre: "Ingles",
+            texto: "Nivel medio",
+            Anyo: ""
+            }</p>
+    </header>
+
+</div>
 
 
 

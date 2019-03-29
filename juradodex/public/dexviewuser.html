@@ -24,11 +24,15 @@
     <div class="row justify-content-md-center">
         <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
             <div class="btn-group mr-2" role="group" aria-label="First group">
-                <button class="btn btn-primary" ng-click="getPageBack()"><i class="fas fa-backward"></i></button>
-                <button class="btn btn-danger" ng-click="deleteAll()"><i class="fas fa-trash-alt"></i></button>
-                <button class="btn btn-warning" ng-click="fillTable()"><i class="fas fa-redo"></i></button>
+                <button class="btn btn-primary" ng-click="getPageBack()" title="Página anterior"><i
+                        class="fas fa-backward"></i></button>
+                <button class="btn btn-danger" ng-click="deleteAll()" title="Borrar todo"><i
+                        class="fas fa-trash-alt"></i></button>
+                <button class="btn btn-warning" ng-click="fillTable()" title="Reinicia la base de datos"><i
+                        class="fas fa-redo"></i></button>
 
-                <button class="btn btn-primary" ng-click="getPageNext()"><i class="fas fa-forward"></i></button>
+                <button class="btn btn-primary" ng-click="getPageNext()" title="Siguiente página"><i
+                        class="fas fa-forward"></i></button>
 
             </div>
             <div class="input-group">
@@ -45,7 +49,7 @@
 
         </div>
         <div class="card-columns">
-            <div class="card text-center">
+            <div class="card text-center" id="cartajurado">
                 <div class="card-header">
                     <select class="form-control" ng-model="newDex.tipo">
                         <option value="Estudios">Estudios</option>
@@ -76,7 +80,7 @@
             <body ng-app="App" ng-controller="portadacontroller">
                 <element ng-repeat="x in dexTotal">
 
-                    <div class="card text-center">
+                    <div class="card text-center" id="cartajurado">
                         <div class="card-header">
                             {{x.tipo}}
                         </div>
