@@ -14,6 +14,10 @@ angular.module("App", ["ngRoute"]).config(function ($routeProvider) {
         .when("/info", {
             templateUrl: "info.html"
         })
+        .when("/dexprueba", {
+            templateUrl: "dexviewprueba.html",
+            controller: "dexcontroller"
+        })
         .when("/prueba", {
             templateUrl: "portadaprueba.html",
             controller: "dexcontroller"
