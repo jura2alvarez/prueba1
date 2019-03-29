@@ -13,12 +13,24 @@
     <li><a class="active" href="#!/dex"><i class="fas fa-grip-horizontal"> </i>  Controller</a></li>
     <li style="float:right"><a href="#!/info"><i class="fas fa-info"></i>nfo</a></li>
 </ul>
-<p></p>
 <ul>
     <li> <button class="btn btn-info" ng-click="getPageBack()">Back</button></li>
     <li><button class="btn btn-info" ng-click="getPageNext()">Next</button></li>
     <li><button class="btn btn-danger" ng-click="deleteAll()">Delete All</button></li>
-    <ti><button class="btn btn-info" ng-click="fillTable()">Fill Table</button></li>
+    <li><button class="btn btn-info" ng-click="fillTable()">Fill Table</button></li>
+    <li style="float:right">
+
+        <select class="form-control" ng-model="tipo" ng-init="tipo='tipo'">
+            <option value="">Todos</option>
+            <option value="Estudios">Estudios</option>
+            <option value="Idioma">Idiomas</option>
+            <option value="Programacion">Programación</option>
+            <option value="Otros">Otros</option>
+        </select>
+
+    <li style="float:right"><button class="btn btn-info" ng-click="getBusqueda()">Buscar</button></li>
+
+    </li>
 </ul>
 <!-- Navegador-->
 <h1>Dex controller beta</h1>
