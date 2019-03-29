@@ -22,24 +22,26 @@
 </div>
 <div class="container">
     <div class="row justify-content-md-center">
-        <div class="btn-group" role="group" aria-label="Basic example">
-            <button class="btn btn-primary" ng-click="getPageBack()"><i class="fas fa-backward"></i></button>
-            <button class="btn btn-danger" ng-click="deleteAll()"><i class="fas fa-trash-alt"></i></button>
-            <button class="btn btn-warning" ng-click="fillTable()"><i class="fas fa-trash-restore-alt"></i></button>
+        <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+                <button class="btn btn-primary" ng-click="getPageBack()"><i class="fas fa-backward"></i></button>
+                <button class="btn btn-danger" ng-click="deleteAll()"><i class="fas fa-trash-alt"></i></button>
+                <button class="btn btn-warning" ng-click="fillTable()"><i class="fas fa-trash-restore-alt"></i></button>
 
-            <button class="btn btn-primary" ng-click="getPageNext()"><i class="fas fa-forward"></i></button>
+                <button class="btn btn-primary" ng-click="getPageNext()"><i class="fas fa-forward"></i></button>
 
+            </div>
+            <div class="input-group">
+                <select class="form-control" ng-model="tipo" ng-init="tipo='tipo'">
+                    <option value="">Todos</option>
+                    <option value="Estudios">Estudios</option>
+                    <option value="Idioma">Idiomas</option>
+                    <option value="Programacion">Programación</option>
+                    <option value="Otros">Otros</option>
+                </select>
 
-            <select class="form-control" ng-model="tipo" ng-init="tipo='tipo'">
-                <option value="">Todos</option>
-                <option value="Estudios">Estudios</option>
-                <option value="Idioma">Idiomas</option>
-                <option value="Programacion">Programación</option>
-                <option value="Otros">Otros</option>
-            </select>
-
-            <button class="btn btn-info" ng-click="getBusqueda()">Buscar</button></li>
-
+                <button class="btn btn-info" ng-click="getBusqueda()">Buscar</button></li>
+            </div>
 
         </div>
         <div class="card-columns">
