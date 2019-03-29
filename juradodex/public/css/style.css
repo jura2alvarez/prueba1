@@ -121,3 +121,7 @@ a:active {
     width: 10%;
     margin-bottom: 1%;
 }
+
+body {
+    background-color: #f3f0f0;
+}

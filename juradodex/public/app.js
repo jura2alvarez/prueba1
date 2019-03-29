@@ -7,15 +7,15 @@ angular.module("App", ["ngRoute"]).config(function ($routeProvider) {
             templateUrl: "portada.html",
             controller: "portadacontroller"
         })
-        .when("/dex", {
-            templateUrl: "dexview.html",
+        .when("/dexadmin", {
+            templateUrl: "dexviewadmin.html",
             controller: "dexcontroller"
         })
         .when("/info", {
             templateUrl: "info.html"
         })
-        .when("/dexprueba", {
-            templateUrl: "dexviewprueba.html",
+        .when("/dexuser", {
+            templateUrl: "dexviewuser.html",
             controller: "dexcontroller"
         })
         .when("/prueba", {
