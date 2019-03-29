@@ -14,10 +14,10 @@
     <li style="float:right"><a href="#!/info"><i class="fas fa-info"></i>nfo</a></li>
 </ul>
 <ul>
-    <li> <button class="btn btn-info" ng-click="getPageBack()">Back</button></li>
-    <li><button class="btn btn-info" ng-click="getPageNext()">Next</button></li>
+    <li> <button class="btn btn-primary" ng-click="getPageBack()">Back</button></li>
+    <li><button class="btn btn-primary" ng-click="getPageNext()">Next</button></li>
     <li><button class="btn btn-danger" ng-click="deleteAll()">Delete All</button></li>
-    <li><button class="btn btn-info" ng-click="fillTable()">Fill Table</button></li>
+    <li><button class="btn btn-warning" ng-click="fillTable()">Fill Table</button></li>
     <li style="float:right">
 
         <select class="form-control" ng-model="tipo" ng-init="tipo='tipo'">
@@ -34,36 +34,36 @@
 </ul>
 <!-- Navegador-->
 <h1>Dex controller beta</h1>
-
 <div class="container">
     <div class="row justify-content-md-center">
-        <div class="card text-center">
-            <div class="card-header">
-                <select class="form-control" ng-model="newDex.tipo">
-                    <option value="Estudios">Estudios</option>
-                    <option value="Idioma">Idioma</option>
-                    <option value="Programacion">Programación</option>
-                    <option value="Otros">Otros</option>
-                </select>
-            </div>
-            <p></p>
-            <h5 class="card-title">Nombre <input class="form-control" type="" ng-model="newDex.nombre" /></h5>
-            <div class="card-footer text-muted">
-                Texto <input class="form-control" type="" ng-model="newDex.texto" />
-            </div>
-            <div class="card-footer text-muted">
-                Año <input class="form-control" type="" ng-model="newDex.anyo" />
-            </div>
-            <div class="card-footer text-muted">
-                <button class="btn btn-success" ng-click="addDex()">
-                    Add
-                </button>
+        <div class="card-columns">
+            <div class="card text-center">
+                <div class="card-header">
+                    <select class="form-control" ng-model="newDex.tipo">
+                        <option value="Estudios">Estudios</option>
+                        <option value="Idioma">Idioma</option>
+                        <option value="Programacion">Programación</option>
+                        <option value="Otros">Otros</option>
+                    </select>
+                </div>
+                <p></p>
+                <h5 class="card-title">Nombre <input class="form-control" type="" ng-model="newDex.nombre" /></h5>
+                <div class="card-footer text-muted">
+                    Texto <input class="form-control" type="" ng-model="newDex.texto" />
+                </div>
+                <div class="card-footer text-muted">
+                    Año <input class="form-control" type="" ng-model="newDex.anyo" />
+                </div>
+                <div class="card-footer text-muted">
+                    <button class="btn btn-success" ng-click="addDex()">
+                        Add
+                    </button>
+                </div>
+
             </div>
 
-        </div>
 
 
-        <div class="card-deck">
 
             <body ng-app="App" ng-controller="portadacontroller">
                 <element ng-repeat="x in dexTotal">
