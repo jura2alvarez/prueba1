@@ -94,9 +94,6 @@
                         </element>
                     </body>
                 </header>
-
-
-
                 <header class="jumbotron my-4">
                     <h1 class="display-6">Programación </i></h1>
                     <hr class="my-1 border-white">
@@ -127,6 +124,27 @@
                     {{x.texto}}
                 </div>
             </div>
+        </div>
+
+        <!--Prueba bloquecitos-->
+        <div>
+
+            <body ng-app="App" ng-controller="portadacontroller">
+                <element ng-repeat="x in dexTotal | filter:'Estudios'">
+                    <div class="col-sm-4">
+                        <div class="card text-center">
+                            <div class="card-header">
+                                Formación
+                            </div>
+                            <p></p>
+                            <h5 class="card-title">• {{x.nombre}}</h5>
+                            <div class="card-footer text-muted">
+                                {{x.texto}}
+                            </div>
+                        </div>
+                    </div>
+                </element>
+            </body>
         </div>
     </div>
     <div class="row">
