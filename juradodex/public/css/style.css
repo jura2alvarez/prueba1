@@ -79,6 +79,8 @@ a:active {
     color: white
 }
 
+
+
 #jumboblue {
     background-color: #157df5;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
@@ -87,6 +89,10 @@ a:active {
     color: white;
     margin-left: 1%;
     border-left: 1px;
+}
+
+#jumbogrisclaro {
+    background-color: #67a0e293;
 }
 
 #jumbogris {
