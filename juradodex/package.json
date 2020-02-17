@@ -46,7 +46,7 @@
     "request": "^2.88.0",
     "simple-oauth2": "^1.5.2",
     "yarm": "^0.4.0",
-    "yarn": "^1.13.0"
+    "yarn": "^1.22.0"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.7.2"
