@@ -35,7 +35,7 @@
     "express-jwt": "^5.3.1",
     "global": "^4.3.2",
     "googleapis": "^27.0.0",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "jwks-rsa": "^1.2.1",
     "mongodb": "^3.0.5",
     "nedb": "^1.8.0",
