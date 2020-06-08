@@ -24,5 +24,9 @@ angular.module("App", ["ngRoute"]).config(function ($routeProvider) {
         .when("/prueba", {
             templateUrl: "portadaprueba.html",
             controller: "dexcontroller"
+        })
+        .when("/curriculumv", {
+            templateUrl: "curriculum2.html",
+            controller: "dexcontroller"
         });
 });
