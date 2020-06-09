@@ -65,6 +65,39 @@ ul.timeline > li:before {
     height: 20px;
     z-index: 400;
 }
+
+#postit {
+    border-color: yellow;
+    background-color: #eff14c !important;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    margin-block-start: 15%;
+    margin-left: 7%;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#postitheader {
+    background-color: #f8fc2f !important;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#postitblue {
+    border-color: #3390bb;
+    background-color: #78cff8 !important;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    margin-block-start: 15%;
+    margin-left: 7%;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#postitheaderblue {
+    background-color: #53c3f7 !important;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 </style>
 <div class="jumbotron text-center">
     <h1>Curriculum</h1>
@@ -145,27 +178,36 @@ ul.timeline > li:before {
       </ul>
   </div>
 </div>
-
+<p>
 <div class="container">
   <div class="row">
-    <div class="col-sm-4">
+    <div class="col-sm-3">
       <div id="postit" class="card mb-3" style="max-width: 18rem;">
         <div id="postitheader" class="card-header">
-            <h4><i class="fas fa-thumbtack"></i> Otras Competencias
+            <h4><i class="fas fa-thumbtack" style="color:#FA5858"></i> Idiomas
             </h4>
         </div>
         <div class="card-body ">
-            <p>Carné tipo B</p>
             <p>Inglés nivel medio</p>
-      
+
         </div>
-      </div>
     </div>
 
-    <div class="col-sm-8"> <!-- Experiencia -->
-      <h1>Experiencia</h1><p>
-      <ul class="list-unstyled">
-        <li class="media"> <!-- Fujitsu-->
+    <div id="postitblue" class="card mb-3" style="max-width: 18rem;">
+        <div id="postitheaderblue" class="card-header">
+            <h4><i class="fas fa-thumbtack" style="color:#FA5858"></i> Otros </h4>
+        </div>
+        <div class="card-body ">
+            <p>Carné tipo B</p>
+        </div>
+    </div>
+  </div>
+
+  <div class="col-sm-1"></div>
+  <div class="col-sm-8"> <!-- Experiencia -->
+    <h1>Experiencia</h1><p>
+    <ul class="list-unstyled">
+      <li class="media"> <!-- Fujitsu-->
           <img src="images/fujitsu.png" class="mr-3" alt="..." style="width:80px;height:80px;">
           <div class="media-body">
             <h5 class="mt-0">Fujitsu Technology Solutions</h5>
@@ -183,8 +225,8 @@ ul.timeline > li:before {
               </li>
             </ul>
           </div>
-        </li>	<!-- Fin Fujitsu-->
-        <p>
+      </li>	<!-- Fin Fujitsu-->
+      <p>
       </ul>
     </div>
   </div>
