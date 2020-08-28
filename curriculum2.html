@@ -1,0 +1,295 @@
+<html lang="en">
+    <head>
+    <title>Jurado Álvarez</title>
+      <link rel="images/miniatura.png" href="http://juradodex.herokuapp.com/#!/curriculumv">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+      <script src="https://kit.fontawesome.com/ac4759fb14.js"> </script>
+
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+      <!-- Iconos -->
+      <script src="https://kit.fontawesome.com/ac4759fb14.js"></script>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <!-- Bootstrap 4.5-->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk">
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"></script>
+
+      <!-- Timelime-->
+      <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+      <!-- Miniatura-->
+      <html>
+
+    <meta property="og:site_name" content="Jurado Álvarez"/>
+    <meta property="og:title" content="Curriculum Web"/>
+    <meta property="og:description" content="Curriculum Web para descargar en PDF"/>
+    <meta property="og:image" content="images/miniatura.png" />
+    <meta property="og:type" content="blog"/>
+    <meta property="og:url" content="http://juradodex.herokuapp.com/#!/curriculumv">
+
+    </head>
+</html>
+<style>
+  ul.timeline {
+    list-style-type: none;
+    position: relative;
+}
+ul.timeline:before {
+    content: ' ';
+    background: #d4d9df;
+    display: inline-block;
+    position: absolute;
+    left: 29px;
+    width: 2px;
+    height: 100%;
+    z-index: 400;
+}
+ul.timeline > li {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+ul.timeline > li:before {
+    content: ' ';
+    background: white;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #22c0e8;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    z-index: 400;
+}
+
+#postit {
+    border-color: yellow;
+    background-color: #eff14c !important;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    margin-block-start: 15%;
+    margin-left: 7%;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#postitheader {
+    background-color: #f8fc2f !important;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#postitblue {
+    border-color: #3390bb;
+    background-color: #78cff8 !important;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    margin-block-start: 15%;
+    margin-left: 7%;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#postitheaderblue {
+    background-color: #53c3f7 !important;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+</style>
+<div class="jumbotron text-center">
+    <h1>Curriculum</h1>
+</div>
+
+<div class="container"> <!--Carta personal y formación-->
+  <div class="row">
+    <div class="col-sm-3"> <!--Carta personal-->
+      <div class="card text-center" style="width: 18rem;">
+        <img src="images/jurado.png" class="card-img-top" alt="">
+        <div class="card-header">Jose Manuel Jurado Álvarez</div>
+        <div class="card-body">
+          <h5 class="card-title">Ingeniero Informático</h5>
+          <p class="card-text">en tecnologías Informáticas</p>
+          <hr class="my-2">
+          <p class="card-text"><i class="far fa-envelope"></i> <a href="mailto:jurado910@hotmail.com">jurado910@hotmail.com</a></p>
+          <p class="card-text"><i class="fas fa-phone"></i> 659 06 09 70</p>
+          <hr class="my-3">
+          <p><a href="https://github.com/jura2alvarez" class="btn btn-secondary"><i class="fab fa-github" aria-hidden="true"></i>
+                  Search me in GitHub</a></p>
+          <p><a href="https://www.linkedin.com/in/jose-manuel-jurado-alvarez-761ab517a/"
+                  class="btn btn-primary">
+                  <i class="fab fa-linkedin" aria-hidden="true"></i>
+                  Search me in Linkdin</a></p>
+          <hr class="my-3">
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-sm-1"></div>
+
+    <div class="col-sm-8"> <!-- Formación -->
+      <h1>Formación</h1><p>
+      <ul class="list-unstyled">
+        <li class="media"> <!-- Bachillerato-->
+          <img src="images/elcano.gif" class="mr-3 border" alt="..." style="width:80px;height:80px;">
+          <div class="media-body">
+            <h4 class="mt-0">Título Bachillerato Tecnológico</h4>
+            I.E.S. Juan Sebastián Elcano
+          </div>
+        </li><!-- Fin Bachillerato-->
+        <p>
+        <li class="media"> <!-- Ing Software-->
+          <img src="images/us.png" class="mr-3 border" alt="..." style="width:80px;height:80px;">
+          <div class="media-body">
+            <h4 class="media-heading" style="display:inline">Grado en Ingeniería Informática - Ingeniería del Software </h4>
+            <h6 style="display: inline">   Durante 2 años, sin terminar</h6>
+            <p>Universidad de Sevilla</p>
+          </div>
+        </li> <!-- Fin  Ing Software-->
+        <p>
+        <li class="media"> <!-- Ing TI-->
+          <img src="images/us.png" class="mr-3 border" alt="..." style="width:80px;height:80px;">
+          <div class="media-body">
+            <h4 class="media-heading" style="display:inline">Grado en Ingeniería Informática - Tecnologías Informáticas </h4>
+            <h6 style="display: inline">   Actualmente cursando</h6>
+            <p>Universidad de Sevilla </p>
+          </div>
+        </li> <!-- Fin  TI-->
+        <p>
+        <hr class="my-1 border-black"> <!-- separador-->
+        <h2>Cursos y certificaciones</h2>
+        <p>
+        <li class="media"> <!-- Curso Net-->
+          <img src="images/escuelaempresa.jpg" class="mr-3 border" alt="..." style="width:80px;height:80px;">
+          <div class="media-body">
+            <h5 class="mt-0">Curso Universitario de Especialización en Programación SAP y NET</h5>
+            Escuela de Empresa avalado por la Universidad Europea Miguel de Cervantes <img src="images/uemc.png" class="mr-3 border" alt="..." style="width:35px;height:20px;">
+          </div>
+        </li> <!-- Fin Curso Net-->
+        <p>
+        <li class="media"> <!-- Curso Robótica-->
+          <img src="images/escuelaempresa.jpg" class="mr-3 border" alt="..." style="width:80px;height:80px;">
+          <div class="media-body">
+            <h5 class="mt-0">Curso en Robótica y Steam</h5>
+            Escuela de Empresa avalado por la Universidad de Nebrija <img src="images/nebrija.png" class="mr-3 border" alt="..." style="width:20px;height:25px;">
+          </div>
+        </li> <!-- Fin Curso Net-->
+        <p>
+        <li class="media"> <!-- Curso Seguridad Fujitsu-->
+          <img src="images/fujitsu.png" class="mr-3 border" alt="..." style="width:80px;height:80px;">
+          <div class="media-body">
+            <h5 class="mt-0">Curso en Ciberseguridad</h5>
+            Fujitsu Technology Solutions
+          </div>
+        </li> <!-- Fin Curso Net-->
+      </ul>
+    </div>
+  </div>
+</div>
+<p>
+<div class="container"> <!-- Post It y Experiencia-->
+  <div class="row">
+    <div class="col-sm-3">
+      <div id="postit" class="card mb-3" style="max-width: 18rem;">
+        <div id="postitheader" class="card-header">
+            <h4><i class="fas fa-thumbtack" style="color:#FA5858"></i> Idiomas
+            </h4>
+        </div>
+        <div class="card-body ">
+          • Inglés B1 (Instituto de Idiomas Universidad de Sevilla)
+          
+        </div>
+    </div>
+
+    <div id="postitblue" class="card mb-3" style="max-width: 18rem;">
+        <div id="postitheaderblue" class="card-header">
+            <h4><i class="fas fa-thumbtack" style="color:#FA5858"></i> Otros </h4>
+        </div>
+        <div class="card-body ">
+          • Carné de conducir B (2013)
+        </div>
+    </div>
+  </div>
+
+  <div class="col-sm-1"></div>
+  <div class="col-sm-8"> <!-- Experiencia -->
+    <h1>Experiencia</h1><p>
+    <ul class="list-unstyled">
+      <li class="media"> <!-- Fujitsu-->
+          <img src="images/fujitsu.png" class="mr-3" alt="..." style="width:80px;height:80px;">
+          <div class="media-body">
+            <h5 class="mt-0">Fujitsu Technology Solutions</h5>
+            <!-- Time Line Fujitsu-->
+            <ul class="timeline">
+              <li>
+                <a style="color:#0099ff">Grupo Cambios e Incidencias (GCI)</a>
+                <a style="color:#0099ff" class="float-right">Abril 2019, Mayo 2019</a>
+                <p>Grupo de gestión de cambios e incidencias para el Servicio Andaluz de Salud (SAS)</p>
+              </li>
+              <li>
+                <a style="color:#0099ff">Administrador de Sistemas de Monitorización</a>
+                <a style="color:#0099ff" class="float-right">Junio 2019, actualmente.</a>
+                <p>Administrador de Sistemas de Monitorización para el Servicio Andaluz de Salud (SAS) en herramientras como System Center Operations Manager (SCOM) y Nagios.</p>
+              </li>
+            </ul>
+          </div>
+      </li>	<!-- Fin Fujitsu-->
+      <p>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container"> <!-- Competencias Profesionales-->
+  <div class="row">
+    <div class="col-sm-4"></div>
+
+    <div class="col-sm-8"> <!-- Competencias profesionales-->
+      <h1>Competencias profesionales</h1>
+      <h4>Programación:</h4>
+      <div class="row">
+        <div class="col-sm-6">
+          <ul>
+            <li>Java</li>
+            <li>Python</li>
+            <li>PowerShell</li>
+            <li>SQL</li>
+            <li>NodeJs</li>
+            <li>Angular</li>
+            <li>C</li>
+            <li>.NET</li>
+          </ul>
+        </div>
+      </div>  
+      
+      <h4>Sistemas informáticos:</h4>
+      <div class="row">
+        <div class="col-sm-8">
+          <ul>
+            <li>Windows Server</li>
+            <li>Unix Server</li>
+            <li>System Center Operations Manager (SCOM)</li>
+            <li>Nagios</li>
+            <li>Active Directory</li>
+            <li>Automatización de pruebas (Selenium)</li>
+          </ul>
+        </div>
+      </div> 
+    </div> <!-- Fin Competencias profesionales-->
+    
+  </div>
+</div>
